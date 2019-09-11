@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <div class="page-header">
+        <h1>Detalhe da Nota</h1>
+    </div>
+    <p>ID: {{ notas.id }}</p>
+    <p>Nota: {{ notas.title }}</p>
+    <p>Texto: {{ notas.body }}</p>
+
+    <a class="btn btn-primary" href="/notes/">Voltar</a>
+
+{% endblock %}

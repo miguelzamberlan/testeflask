@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <h4>Alterar registro {{ form.id }}</h4>
+
+    <form action="/notes/editar/{{ form.id }}" method="POST">
+        <label>Title</label>
+        <input type="text" name="title" value="{{ form.title }}">
+        <label>Body</label>
+        <input type="text" name="body" value="{{ form.body }}">
+        <input type="hidden" name="id" value="{{ form.id }}">
+        <input type="submit" value="Salvar alterações">
+    </form>
+
+{% endblock %}

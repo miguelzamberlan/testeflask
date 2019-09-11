@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <h4>Lista de Notas</h4>
+    <br />
+    <a class="waves-effect waves-light btn-small blue" href="/notes/create">Criar Nota</a>
+    <br>
+    <table  class="table" border="4">
+        <tr>
+            <td>ID</td>
+            <td>Título</td>
+            <td>Texto</td>
+            <td></td>
+            <td></td>
+        </tr>
+    {% for nota in notas %}
+    <tr>
+        <td>{{ nota.id }}</td>
+        <td>{{ nota.title }}</td>
+        <td>{{ nota.body }}</td>
+        <td><a class="btn red"  href="/notes/excluir/{{ nota.id }}">Remover</a></td>
+        <td><a class="btn btn-primary"  href="/notes/editar/{{ nota.id }}">Alterar</a></td>
+        <td><a class="btn btn-primary"  href="/notes/{{ nota.id }}">Detalhe</a></td>
+    </tr>
+    {% endfor %}
+
+{% endblock %}
